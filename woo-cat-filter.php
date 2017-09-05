@@ -114,3 +114,10 @@ add_action( 'wp_ajax_field2_callback', 'field2_callback');
 add_action('wp_ajax_nopriv_field2_callback', 'field2_callback');
 add_action('admin_post_submit_form', 'form_submit_callback');
 add_action('admin_post_nopriv_submit_form', 'form_submit_callback');
+
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/m1kfb/woo-cat-filter/',
+    __FILE__,
+    'woo-cat-filter'
+);

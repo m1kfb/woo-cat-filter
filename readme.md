@@ -1,4 +1,4 @@
-=== Woocommerce Category Filter ===
+# Woocommerce Category Filter
 
 Contributors: m1kfb
 Tags: layered-nav, vehicle-search, categories
@@ -8,26 +8,26 @@ Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-== Description ==
+## Description
 Woocommerce Category Filter is a simple 2 level layered navigation search tool. Created as a vehicle search tool
 primarily but with the ability to change the search fields in the form.
 
-== Changelog ==
+## Changelog
 
-= 1.1.0 =
+##### 1.1.0 
 * Fixed redirection
 * Added automatic update
 
-= 1.0.3 =
+##### 1.0.3
 * Added validation
 
-= 1.0.2 =
+##### 1.0.2
 * Change form to Ajax instead of Static
 
-= 1.0.1 =
+##### 1.0.1
 * Created form
 
-= 1.0.0 =
+##### 1.0.0
 * Dawn of time
 
-== Shortcode Help ==
+## Shortcode Help

@@ -15,7 +15,7 @@ primarily but with the ability to change the search fields in the form.
 == Changelog ==
 
 = 1.2.0 =
-* 
+* Add optional 3rd level
 
 = 1.1.2 =
 * Add empty select to field2
@@ -40,3 +40,12 @@ primarily but with the ability to change the search fields in the form.
 * Dawn of time
 
 == Shortcode Help ==
+
+[wcfcatsearch level3=true field_1_label=Make field_2_label=Model field_3_label=Wheelbase submit_text=Search]
+
+= Default =
+* level3 = false
+* field_1_label = Make
+* field_2_label = Model
+* field_3_label = Wheelbase
+* submit_text = Search

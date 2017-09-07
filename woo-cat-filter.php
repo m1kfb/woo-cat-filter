@@ -11,7 +11,7 @@
  * Plugin Name: Woocommerce Category Filter
  * Plugin URI:  https://lancit.uk/plugin/woocommerce/woo-cat-filter
  * Description: Simple Parent category and sub-cat filter.
- * Version:     1.2.0
+ * Version:     1.2.1
  * Author:      Mike Brown
  * Author URI:  https://lancit.uk
  * Text Domain: woo-cat-filter
@@ -56,6 +56,7 @@ function form_creation($atts) {
             </div>
             <?php if($level3) { ?>
             <div class="field3">
+                <label for="field3"><?= $field3_label ?></label>
                 <div id="loading3" style="display: none;">Loading...</div>
                 <div id="field3_container">
                     <select name="field3" id="field3">

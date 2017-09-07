@@ -40,3 +40,12 @@ primarily but with the ability to change the search fields in the form.
 * Dawn of time
 
 ## Shortcode Help
+
+[wcfcatsearch level3=true field_1_label=Make field_2_label=Model field_3_label=Wheelbase submit_text=Search]
+
+##### Default
+* level3 = false
+* field_1_label = Make
+* field_2_label = Model
+* field_3_label = Wheelbase
+* submit_text = Search

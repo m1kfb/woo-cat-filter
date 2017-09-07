@@ -14,6 +14,9 @@ primarily but with the ability to change the search fields in the form.
 
 ## Changelog
 
+##### 1.2.0
+* Added an option 3rd level
+
 ##### 1.1.2
 * Add empty select to field2
 

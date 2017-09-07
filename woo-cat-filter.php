@@ -11,14 +11,22 @@
  * Plugin Name: Woocommerce Category Filter
  * Plugin URI:  https://lancit.uk/plugin/woocommerce/woo-cat-filter
  * Description: Simple Parent category and sub-cat filter.
- * Version:     1.1.0
+ * Version:     1.1.2
  * Author:      Mike Brown
  * Author URI:  https://lancit.uk
  * Text Domain: woo-cat-filter
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
+register_activation_hook( __FILE__, 'child_plugin_activate' );
+function child_plugin_activate(){
 
+    // Require parent plugin
+    if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) and current_user_can( 'activate_plugins' ) ) {
+        // Stop activation redirect and show error
+        wp_die('Sorry, but this plugin requires Woocommerce to be installed and active. <br><a href="' . admin_url( 'plugins.php' ) . '">&laquo; Return to Plugins</a>');
+    }
+}
 
 function form_creation($atts) {
     $a = shortcode_atts(['field_1_label'=>'Make', 'field_2_label'=>'Model', 'submit_text'=>'Search'], $atts);
@@ -38,7 +46,11 @@ function form_creation($atts) {
             <div class="field2">
                 <label for="field2"><?= $field2_label ?></label>
                 <div id="loading2" style="display: none;">Loading...</div>
-                <div id="field2_container"></div>
+                <div id="field2_container">
+                    <select name="field2" id="field2">
+                        <option value="">Please select</option>
+                    </select>
+                </div>
             </div>
             <div class="wcf-button">
                 <input type="submit" value="<?= $submit_label ?>">
@@ -84,7 +96,7 @@ function wcf_scripts() {
 
 function field1_callback() {
     wp_dropdown_categories(
-        ['name'=>'field1', 'taxonomy'=>'product_cat', 'show_option_none'=>'Please Select', 'child_of'=> 0, 'depth'=> 1, 'order'=>'ASC', 'hierarchical'=> 1, 'orderby' => 'name']
+        ['name'=>'field1', 'taxonomy'=>'product_cat', 'show_option_none'=>'Please Select', 'child_of'=> 0, 'depth'=> 1, 'order'=>'ASC', 'hierarchical'=> true, 'orderby' => 'name']
     );
     die();
 }
